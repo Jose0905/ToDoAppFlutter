@@ -33,6 +33,12 @@ class HomeBottomAppBar extends StatelessWidget {
               log('Tap en Hecho');
             },
           ),
+          HomeButtonText(
+            title: 'En revision',
+            onTap: () {
+              log('Tap en revision');
+            },
+          ),
         ],
       ),
     );
