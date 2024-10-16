@@ -6,4 +6,11 @@ class Tarea {
     required this.titulo,
     required this.fechaCreacion,
   });
+
+  Tarea copyWith({String? titulo, DateTime? fechaCreacion}) {
+    return Tarea(
+      titulo: titulo ?? this.titulo,
+      fechaCreacion: fechaCreacion ?? this.fechaCreacion,
+    );
+  }
 }

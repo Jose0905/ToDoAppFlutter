@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:todo_app/models/tarea.dart';
 import 'package:todo_app/util/formatter_util.dart';
+import 'package:todo_app/widgets/editar_tarea_dialog.dart';
 import 'package:todo_app/widgets/eliminar_tarea_dialog.dart';
 import 'package:todo_app/widgets/home_icon_card.dart';
 
@@ -42,7 +43,14 @@ class CardTarea extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    showDialog(
+                      context: context,
+                      builder: (context) {
+                        return EditarTareaDialog(tarea: tarea);
+                      },
+                    );
+                  },
                   child: const HomeIconCard(icon: Icons.edit),
                 ),
                 InkWell(

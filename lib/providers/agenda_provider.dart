@@ -19,4 +19,10 @@ class AgendaProvider extends ChangeNotifier {
     _tareas.removeAt(index);
     notifyListeners();
   }
+
+  void editarTarea(String nuevoNombreTarea, Tarea tareaActual) {
+    final index = _tareas.indexOf(tareaActual);
+    _tareas[index] = _tareas[index].copyWith(titulo: nuevoNombreTarea);
+    notifyListeners(); // _tareas.re
+  }
 }
