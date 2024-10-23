@@ -14,7 +14,7 @@ class HomeScreen extends StatelessWidget {
       appBar: HomeAppBar(),
       body: const HomeBody(),
       floatingActionButton: const HomeActionButton(),
-      bottomNavigationBar: const HomeBottomAppBar(),
+      bottomNavigationBar: const HomeBottomAppbar(),
     );
   }
 }

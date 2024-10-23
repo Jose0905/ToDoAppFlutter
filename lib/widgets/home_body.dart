@@ -11,12 +11,19 @@ class HomeBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tareas = Provider.of<AgendaProvider>(context).tareas;
+    final List<Tarea> tareas = Provider.of<AgendaProvider>(context).tareas;
+    final tipoTareaSeleccionada =
+        Provider.of<AgendaProvider>(context).tipoTareaSeleccionada;
+
+    // Filtrando la lista tareas según el tipo de tarea seleccionada.
+    final List<Tarea> tareasPorTipo = tareas.where((tarea) {
+      return tarea.tipoTarea == tipoTareaSeleccionada;
+    }).toList();
 
     return ListView.builder(
-      itemCount: tareas.length,
+      itemCount: tareasPorTipo.length,
       itemBuilder: (context, index) {
-        Tarea tarea = tareas[index];
+        Tarea tarea = tareasPorTipo[index];
         return CardTarea(tarea: tarea);
       },
     );

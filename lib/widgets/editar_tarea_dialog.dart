@@ -44,7 +44,7 @@ class _EditarTareaDialogState extends State<EditarTareaDialog> {
             ),
             TextField(
               controller: textEditingController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'Ingrese un nombre',
                 hintText: 'Editar tarea',
                 border: OutlineInputBorder(),
