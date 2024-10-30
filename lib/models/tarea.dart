@@ -11,6 +11,24 @@ class Tarea {
     this.tipoTarea = TipoTarea.porHacer,
   });
 
+  // Método para convertir uuna Tarea a JSON
+  Map<String, dynamic> toJson() {
+    return {
+      'titulo': titulo,
+      'fechaCreacion': fechaCreacion.millisecondsSinceEpoch,
+      'tipoTarea': tipoTarea.index,
+    };
+  }
+
+  // Método para crear una Tarea desde un JSON
+  factory Tarea.fromJson(Map<String, dynamic> json) {
+    return Tarea(
+      titulo: json['titulo'],
+      fechaCreacion: DateTime.fromMillisecondsSinceEpoch(json['fechaCreacion']),
+      tipoTarea: TipoTarea.values[json['tipoTarea']],
+    );
+  }
+
   Tarea copyWith({
     String? titulo,
     DateTime? fechaCreacion,

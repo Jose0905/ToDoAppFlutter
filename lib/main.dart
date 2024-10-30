@@ -13,7 +13,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (context) => AgendaProvider(),
+      create: (context) => AgendaProvider()..cargarTareas(),
       child: const MaterialApp(home: HomeScreen()),
     );
   }
